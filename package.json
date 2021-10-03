@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "express-winston": "^4.2.0",
+    "heroku": "^7.59.0",
     "mongodb": "^4.1.2",
     "mongoose": "^6.0.8",
     "winston": "^3.3.3"
