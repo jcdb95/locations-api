@@ -22,6 +22,7 @@
     "heroku": "^7.59.0",
     "mongodb": "^4.1.2",
     "mongoose": "^6.0.8",
+    "serverless": "^2.60.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {
@@ -36,7 +37,7 @@
     "tslint": "^6.1.3",
     "typescript": "^4.4.3"
   },
-  "engines":{
+  "engines": {
     "node": "10.16.2"
   }
 }
