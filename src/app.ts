@@ -30,7 +30,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     
     if (req.method == 'OPTIONS') {
         res.header("Access-Control-Allow-Methods: HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS");
-        res.set('Access-Control-Allow-Headers', 'Authorization');
         return res.status(200).json({});
     }
 
