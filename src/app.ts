@@ -2,6 +2,7 @@ import express, {Request, Response, NextFunction, json} from 'express';
 import LocationRoutes from './routes/location'; 
 import mongoose  from 'mongoose';
 import config from './config/config';
+import cors from 'cors';
 import 'dotenv/config'
 
 import basicAuth from 'express-basic-auth';
@@ -18,6 +19,13 @@ app.use(basicAuth({
 }))
 
 app.use('/locations', LocationRoutes);
+
+app.use((
+    cors({
+        origin:'*',
+        credentials:true
+    })
+))
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
