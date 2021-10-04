@@ -20,12 +20,12 @@ app.use(basicAuth({
 
 app.use('/locations', LocationRoutes);
 
-app.use((
+app.use(
     cors({
         origin:'*',
         credentials:true
     })
-))
+)
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
