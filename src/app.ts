@@ -20,11 +20,7 @@ app.use(basicAuth({
 
 app.use('/locations', LocationRoutes);
 
-app.use(
-    cors({
-        origin:'http://localhost:8080/',
-    })
-)
+app.use(cors())
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
