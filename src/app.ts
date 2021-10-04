@@ -22,14 +22,13 @@ app.use('/locations', LocationRoutes);
 
 app.use(
     cors({
-        origin:'*',
-        credentials:true
+        origin:'http://localhost:8080/',
     })
 )
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080/');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization");
     res.header('Content-Type: application/json');
     
