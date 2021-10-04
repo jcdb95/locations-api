@@ -4,6 +4,9 @@ import Location from '../models/location';
 
 
 export const createLocation:RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+
+	res.set('Access-Control-Allow-Origin', '*');
+
     let { id, name, address, city, latitude, longitude, prices, products } = req.body;
 
     const location = new Location({
@@ -27,6 +30,9 @@ export const createLocation:RequestHandler = async (req: Request, res: Response,
 };
 
 export const getLocations:RequestHandler = (req: Request, res: Response, next: NextFunction) => {
+
+	res.set('Access-Control-Allow-Origin', '*');
+
 	console.log("Get locations called")
 	Location.find()
 	.exec()
@@ -42,6 +48,8 @@ export const getLocations:RequestHandler = (req: Request, res: Response, next: N
  };
 
 export const updateLocation:RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+
+	res.set('Access-Control-Allow-Origin', '*');
 	
 	let {location_id, new_product_price, product_id, new_location_name } =  req.body;
 
@@ -82,6 +90,9 @@ export const updateLocation:RequestHandler = async (req: Request, res: Response,
 };
 
 export const deleteLocation:RequestHandler = (req: Request, res: Response, next: NextFunction) => {
+
+	res.set('Access-Control-Allow-Origin', '*');
+
 
 	let { location_id } = req.body;
 
