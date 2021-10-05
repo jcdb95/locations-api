@@ -5,26 +5,28 @@ import Location from '../models/location';
 
 export const createLocation:RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
 
-    let { id, name, address, city, latitude, longitude, prices, products } = req.body;
+	console.log(req)
 
-    const location = new Location({
-        id, name, address, city, latitude, longitude, prices, products
-    });
+    // let { id, name, address, city, latitude, longitude, prices, products } = req.body;
+
+    // const location = new Location({
+    //     id, name, address, city, latitude, longitude, prices, products
+    // });
 
 
-    try {
-		const result = await location
-			.save();
-		return res.status(201).json({
-			location: result
-		});
-	} catch (error: any) {
-		console.log(error)
-		return res.status(500).json({
-			message: error.code == 11000 ? "Duplicate id" : error,
-			error
-		});
-	}
+    // try {
+	// 	const result = await location
+	// 		.save();
+	// 	return res.status(201).json({
+	// 		location: result
+	// 	});
+	// } catch (error: any) {
+	// 	console.log(error)
+	// 	return res.status(500).json({
+	// 		message: error.code == 11000 ? "Duplicate id" : error,
+	// 		error
+	// 	});
+	// }
 };
 
 export const getLocations:RequestHandler = (req: Request, res: Response, next: NextFunction) => {
