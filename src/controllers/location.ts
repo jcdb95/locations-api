@@ -4,8 +4,9 @@ import Location from '../models/location';
 
 
 export const createLocation:RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
-
+	
 	console.log(req)
+	return res.status(201)
 
     // let { id, name, address, city, latitude, longitude, prices, products } = req.body;
 
