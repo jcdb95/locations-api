@@ -28,7 +28,12 @@ LocationSchema.index({id: 1}, {unique: true});
 
 // Create index for avoiding duplicate documents
 const Location = mongoose.model('Location', LocationSchema);
-Location.collection.createIndex({ id: 1 }, {unique:true}); 
-Location.syncIndexes();
+Location.collection.createIndex({ id: 1 }, {unique:true})
+.then(() => {
+	console.log("Index created")
+	Location.syncIndexes();
+}).catch((err) => {
+	console.log("Error creating index", err)
+});
 
 export default mongoose.model<ILocation>('Location', LocationSchema);
