@@ -31,12 +31,14 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     
     if (req.method == 'OPTIONS') {
         res.header("Access-Control-Allow-Methods: HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS");
-        res.header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization");
+        res.header('Content-Type: application/json');
+        res.header("Access-Control-Allow-Headers: Content-Type"); 
         return res.status(200).json({});
     }
 
     next();
 });
+
 
 /** Error handling */
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
