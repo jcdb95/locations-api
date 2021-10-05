@@ -2,6 +2,7 @@ import express, {Request, Response, NextFunction, json} from 'express';
 import LocationRoutes from './routes/location'; 
 import mongoose  from 'mongoose';
 import config from './config/config';
+import cors from 'cors';
 import 'dotenv/config'
 
 const app = express();
@@ -21,7 +22,7 @@ app.get('/api/auth', (req: Request, res: Response) =>{
     }
 });
 
-// app.use(cors())
+app.use(cors())
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
