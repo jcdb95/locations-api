@@ -22,7 +22,7 @@ app.get('/api/auth', (req: Request, res: Response) =>{
     }
 });
 
-app.use(cors())
+// app.use(cors())
 
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
