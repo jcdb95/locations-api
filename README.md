@@ -39,10 +39,10 @@ npm run start
 
 - API Document endpoints
 
-  Locations GET : http://localhost:3000/api/locations 
-  Locations POST : http://localhost:3000/api/locations 
-  Locations PATCH : http://localhost:3000/api/locations 
-  Locations DELETE : http://localhost:3000/api/locations 
+  - Locations GET : http://localhost:3000/api/locations 
+  - Locations POST : http://localhost:3000/api/locations 
+  - Locations PATCH : http://localhost:3000/api/locations 
+  - Locations DELETE : http://localhost:3000/api/locations 
 
 
 
@@ -65,7 +65,7 @@ The folder structure of this app is explained below:
 | **src/routes**           | Contain all express routes, separated by module/area of application                           |
 | **src/models**           | Models define schemas used in storing and retrieving data from Application database           |
 | **src**/app.ts           | Entry point to express app                                                                    |
-| package.json             | Contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)   
+| package.json             | Contains npm dependencies as well as build scripts                                            |   
 | tsconfig.json            | Config settings for compiling source code only written in TypeScript                          |
 
 ## Building the project
