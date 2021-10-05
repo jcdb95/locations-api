@@ -2,7 +2,6 @@ import express, {Request, Response, NextFunction, json} from 'express';
 import LocationRoutes from './routes/location'; 
 import mongoose  from 'mongoose';
 import config from './config/config';
-import cors from 'cors';
 import 'dotenv/config'
 
 const app = express();
@@ -32,6 +31,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     
     if (req.method == 'OPTIONS') {
         res.header("Access-Control-Allow-Methods: HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS");
+        res.header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization");
         return res.status(200).json({});
     }
 
