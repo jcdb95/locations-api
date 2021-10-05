@@ -10,15 +10,15 @@ const port = process.env.PORT || 3000
 
 app.use(json());  
 
-app.use('api/locations', LocationRoutes);
+app.use('/api/locations', LocationRoutes);
 
 
-app.get('api/auth', (req: Request, res: Response) =>{
+app.get('/api/auth', (req: Request, res: Response) =>{
     let {user, pass} = req.body;
     if(user === 'jcdb' && pass === 'qqwweerrttyy12@@'){
 		return res.status(200).json({auth: true});
     } else {
-		return res.status(501).json({auth: false});
+		return res.status(401).json({auth: false});
     }
 });
 
