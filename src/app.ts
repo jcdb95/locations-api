@@ -27,16 +27,12 @@ app.get('/api/auth', (req: Request, res: Response) =>{
 /** Rules of our API */
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header("Access-Control-Allow-Headers", 'X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization');
-    res.header('Content-Type: application/json');
-    // res.header('Accept: application/json');
+    res.header('Access-Control-Allow-Headers', 'X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization');
     
     
     // OPTIONS is the Preflight method dispatch 
     if (req.method === 'OPTIONS') {
-        res.header("Access-Control-Allow-Methods: HEAD, GET, POST, PUT, PATCH, DELETE, OPTIONS");
-        res.header('Content-Type: application/json');
-        res.header('Access-Control-Allow-Headers: Content-Type'); 
+        res.header("Access-Control-Allow-Methods: GET, POST, PATCH, DELETE");
         return res.status(200)
     }
 
